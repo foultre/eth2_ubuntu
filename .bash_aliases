@@ -9,7 +9,6 @@ alias lighthousebeacon='journalctl -u lighthousebeacon -f --output cat --line=10
 alias lighthousevalidator='journalctl -u lighthousevalidator -f --output cat --line=100'
 alias goeth='journalctl -u geth -f --output cat --line=100'
 alias i='sudo iotop'
-alias logopenethereum='journalctl -u openethereum -f --output cat --line=100'
 alias editbeacon='sudo nano /etc/systemd/system/lighthousebeacon.service'
 alias editvalidator='sudo nano /etc/systemd/system/lighthousevalidator.service'
 alias editgeth='sudo nano /etc/systemd/system/geth.service'
