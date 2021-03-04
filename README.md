@@ -1,2 +1,2 @@
 # eth2
-eth2 scripts
+Tested on ubuntu 20.04 
