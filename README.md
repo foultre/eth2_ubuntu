@@ -1,1 +1,2 @@
-# eth2_ubuntu
+# eth2
+eth2 scripts

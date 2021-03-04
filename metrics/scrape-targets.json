@@ -1,0 +1,12 @@
+[
+  {
+    "labels": {
+      "job": "nodes"
+    },
+    "targets": [
+      "localhost:5054",
+      "localhost:5064",
+      "localhost:9100"
+    ]
+  }
+]

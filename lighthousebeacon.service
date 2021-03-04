@@ -1,0 +1,14 @@
+[Unit]
+Description=Lighthouse Beacon Node
+After=network.target
+Wants=network.target
+
+[Service]
+User=lighthousebeacon
+Group=lighthousebeacon
+Type=simple
+Restart=always
+RestartSec=5
+ExecStart=/usr/local/bin/lighthouse beacon_node --disable-upnp --datadir /var/lib/lighthouse/beacon-node --network mainnet --http --eth1-endpoints http://localhost:8545 --metrics --graffiti "We are going to the moon" --slasher --slasher-history-length 256 --slasher-max-db-size 16 
+[Install]
+WantedBy=default.target

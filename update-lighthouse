@@ -1,0 +1,14 @@
+#!/bin/bash
+
+##update lighthouse to lastest version##
+
+rm lighthouse-*-x86_64-unknown-linux-gnu-portable.tar.gz
+version=$(curl --silent "https://api.github.com/repos/sigp/lighthouse/tags" | jq -r '.[0].name')
+echo -e "updating lighthouse to version $version"
+wget https://github.com/sigp/lighthouse/releases/download/$version/lighthouse-$version-x86_64-unknown-linux-gnu-portable.tar.gz
+tar -xvzf lighthouse-$version-x86_64-unknown-linux-gnu-portable.tar.gz
+sudo systemctl stop lighthousevalidator
+sudo systemctl stop lighthousebeacon
+sudo cp lighthouse /usr/local/bin
+sudo systemctl start lighthousebeacon
+sudo systemctl start lighthousevalidator

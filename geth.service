@@ -1,0 +1,19 @@
+[Unit]
+Description=Ethereum go client
+After=network.target 
+Wants=network.target
+
+[Service]
+User=goeth 
+Group=goeth
+Type=simple
+ExecStart=/usr/bin/geth  --http --datadir /var/lib/goethereum/mainnet --metrics --pprof --maxpeers 30
+CPUQuota=250%
+KillMode=process
+KillSignal=SIGINT
+TimeoutStopSec=90
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+WantedBy=default.target
