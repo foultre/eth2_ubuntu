@@ -1,0 +1,7 @@
+#!/bin/bash
+
+tar -xvzf geth-linux-amd64*.tar.gz
+sudo systemctl stop geth
+sudo cp ./geth-linux-amd64*/geth /usr/bin/geth
+sudo systemctl start geth
+echo "Done updating!"
