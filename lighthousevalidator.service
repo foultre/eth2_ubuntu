@@ -9,7 +9,12 @@ Group=lighthousevalidator
 Type=simple
 Restart=always
 RestartSec=5
-ExecStart=/usr/local/bin/lighthouse vc --beacon-nodes http://localhost:5052 --metrics --datadir /var/lib/lighthouse/validator --network mainnet
+ExecStart=/usr/local/bin/lighthouse vc \
+                --beacon-nodes http://localhost:5052 \
+                --metrics \
+                --datadir /var/lib/lighthouse/validator \
+                --network mainnet \
+                --suggested-fee-recipient 0x21dbb7ef559f800C8F2D45C13C413832BBF9b1DA
 
 [Install]
 WantedBy=default.target
