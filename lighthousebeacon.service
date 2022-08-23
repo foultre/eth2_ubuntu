@@ -9,6 +9,16 @@ Group=lighthousebeacon
 Type=simple
 Restart=always
 RestartSec=5
-ExecStart=/usr/local/bin/lighthouse beacon_node --disable-upnp --datadir /var/lib/lighthouse/beacon-node --network mainnet --http --eth1-endpoints http://localhost:8545 --metrics --graffiti "We are going to the moon" --slasher --slasher-history-length 256 --slasher-max-db-size 16 
+ExecStart=/usr/local/bin/lighthouse beacon_node \
+                --disable-upnp \
+                --datadir /var/lib/lighthouse/beacon-node \
+                --network mainnet \
+                --http \
+                --metrics \
+                --graffiti "flippening in progress" \
+                --execution-jwt /var/lib/lighthouse/beacon-node/beacon/jwtsecret \
+                --execution-endpoint http://localhost:8551 \
+                --suggested-fee-recipient 0x21dbb7ef559f800C8F2D45C13C413832BBF9b1DA
+
 [Install]
 WantedBy=default.target
