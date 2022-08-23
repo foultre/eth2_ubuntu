@@ -1,7 +1,19 @@
 #!/bin/bash
 
-tar -xvzf geth-linux-amd64*.tar.gz
+##update geth to lastest version##
+
+rm geth-linux-amd64*.tar.gz
+version=$(curl --silent "https://api.github.com/repos/ethereum/go-ethereum/tags" | jq -r '.[0].name' | cut -c2-)
+echo -e "updating geth to version $version sha $sha"
+sha=$(curl --silent "https://api.github.com/repos/ethereum/go-ethereum/tags" | jq -r '.[0].commit.sha' |   cut -c1-8)
+wget https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-$version-$sha.tar.gz
+tar -xvzf geth-linux-amd64-$version-$sha.tar.gz
+
 sudo systemctl stop geth
-sudo cp ./geth-linux-amd64*/geth /usr/bin/geth
+sudo cp ./geth-linux-amd64-$version-$sha/geth /usr/bin/geth
 sudo systemctl start geth
 echo "Done updating!"
+
+
+
+
