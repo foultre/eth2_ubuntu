@@ -17,3 +17,6 @@ sudo cp $HOME/jwt_secret /var/lib/lighthouse/beacon-node
 sudo chown -R lighthousebeacon:lighthousebeacon /var/lib/lighthouse/beacon-node
 sudo chown -R lighthousevalidator:lighthousevalidator /var/lib/lighthouse/validator
 sudo chown -R goeth:goeth /var/lib/goethereum
+cp update-geth update-lighthouse $HOME
+chmod +x $HOME/update-geth
+chmod +x $HOME/update-lighthouse
