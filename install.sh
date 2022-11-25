@@ -1,5 +1,6 @@
 #sudo apt update
-#sudo apt install -y jq
+sudo apt install -y jq
+cp .bash_aliases $HOME
 sudo cp geth.service /etc/systemd/system/geth.service
 sudo cp lighthousebeacon.service /etc/systemd/system/lighthousebeacon.service
 sudo cp lighthousevalidator.service /etc/systemd/system/lighthousevalidator.service
