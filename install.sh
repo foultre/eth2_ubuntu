@@ -20,3 +20,4 @@ sudo chown -R goeth:goeth /var/lib/goethereum
 cp update-geth update-lighthouse $HOME
 chmod +x $HOME/update-geth
 chmod +x $HOME/update-lighthouse
+
