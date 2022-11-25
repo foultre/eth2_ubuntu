@@ -1,6 +1,7 @@
 # running an Ethereum validator under Ubuntu
 Tested on ubuntu 20.04.01  
 geth + lighthouse  
+  
 in order to setup env, run    
 `./install.sh`  
 then to start geth  
