@@ -1,4 +1,4 @@
-# running an ethereum validator under Ubuntu
+# running an Ethereum validator under Ubuntu
 Tested on ubuntu 20.04.01. 
 run. 
 `./install.sh`.  
