@@ -21,3 +21,9 @@ start lighthouse validator (after importing your validator keys)
 `sudo systemctl start lightousevalidator`  
 start mev-boost after installing docker (only non censoring mev-boost relays)  
 `./mev-boost`  
+  
+  
+In order to view logs:
+`goeth` view geth logs  
+`lighthousebeacon` view beacon logs  
+`lighthousevalidator` view validator logs   
