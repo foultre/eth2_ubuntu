@@ -3,6 +3,7 @@
 sudo cp geth.service /etc/systemd/system/geth.service
 sudo cp lighthousebeacon.service /etc/systemd/system/lighthousebeacon.service
 sudo cp lighthousevalidator.service /etc/systemd/system/lighthousevalidator.service
+sudo systemctl daemon-reload
 openssl rand -hex 32 | tr -d "\n" > "$HOME/jwt_secret"
 sudo useradd --no-create-home --shell /bin/false lighthousevalidator
 sudo useradd --no-create-home --shell /bin/false lighthousebeacon
