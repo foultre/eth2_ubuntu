@@ -4,7 +4,9 @@ geth + lighthouse
   
 in order to setup env, run    
 `./install.sh`  
-then in $HOME run `./update-geth` and `./update-lighthouse` to install & start syncing lightouse and geth  
+then in $HOME run ```./update-geth
+./update-lighthouse``` 
+to install & start syncing lightouse and geth  
   
 Once geth and lighthouse installed you can  
 start geth  
