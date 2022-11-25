@@ -4,6 +4,7 @@ geth + lighthouse
   
 in order to setup env, run    
 `./install.sh`  
+then in $HOME run `./update-geth` and `./update-lighthouse` to install & start syncing lightouse and geth 
 then to start geth  
 `sudo systemctl start geth`  
 start lighthouse beacon node  
