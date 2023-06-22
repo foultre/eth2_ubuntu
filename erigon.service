@@ -1,0 +1,27 @@
+[Unit]
+Description=Erigon
+After=network.target
+Wants=network.target
+
+[Service]
+WorkingDirectory=/var/lib/erigon
+ExecStart=/usr/local/bin/erigon \
+	--datadir=/var/lib/erigon \
+	--authrpc.jwtsecret=/var/lib/erigon/jwt_secret \
+	--http.addr=0.0.0.0 \
+	--http \
+	--chain=mainnet \
+	--http.api=eth,erigon,web3,net,debug,txpool \
+#	--torrent.download.rate "64mb" \
+	--ws
+
+User=erigon
+KillMode=process
+KillSignal=SIGINT
+TimeoutStopSec=90
+Restart=on-failure
+RestartSec=10s
+
+
+[Install]
+WantedBy=default.target

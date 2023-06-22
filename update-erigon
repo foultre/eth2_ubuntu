@@ -1,0 +1,18 @@
+#!/bin/bash
+
+##update erigon to lastest version##
+
+rm -rf erigon_*_linux_amd64.tar.gz
+url=$(curl --silent "https://api.github.com/repos/ledgerwatch/erigon/releases" | jq -r '.[0].assets[3].browser_download_url')
+echo -e "updating erigon"
+
+wget $url
+tar -xvzf erigon_*_linux_amd64.tar.gz
+sudo systemctl stop erigon
+sudo cp ./erigon /usr/local/bin/erigon
+sudo systemctl start erigon
+echo "Done updating!"
+
+
+
+
